@@ -1,8 +1,8 @@
 # Ghumantey_API
-Rest Api for an tourism based application.
-/api/login                          -post
-/api/register                       -post
-/api/profile                        -get
+Rest Api for an tourism based application.<br>
+/api/login                          -post <br>
+/api/register                       -post <br>
+/api/profile                        -get <br>
 /api/profile/edit                   -put
 /api/destinations                   -get
 /api/destination/1                  -get
