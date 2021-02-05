@@ -50,7 +50,11 @@ router.put('/profile/edit',(req, res)=>{
 router.get("/destinations", (req, res)=>{
 
     Destination.find({}).then(destinations =>{
-        res.json(destinations);
+        var jsonData = JSON.stringify(destinations);
+        jsonData = `{"data":${jsonData}}`;
+        jsonData = JSON.parse(jsonData);
+        console.log(jsonData);
+        res.json(jsonData);
     });
 });
 

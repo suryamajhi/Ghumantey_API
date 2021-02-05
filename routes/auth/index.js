@@ -61,12 +61,21 @@ router.post('/login',(req, res)=>{
 
 router.get('/loginSuccess',(req, res)=>{
 
-    console.log(req.session.user);
-    res.json({"message":"success"})
-})
+    let user_id = req.session.passport.user;
+    User.findOne({_id: user_id}).then(user=>{
+        res.json({
+            "success":"true",
+            "message":"User login successfull",
+            "data":user
+        });
+    });
+});
 router.get("/loginFail",(req,res)=>{
-    res.json({"message":"fail"})
-})
+    res.json({
+        "success":"false",
+        "message":"User login failed",
+    })
+});
 
 
 
